@@ -1,0 +1,50 @@
+<div class="container my-5">
+    <div class="row">
+
+        <div class="col-sm-6 mx-auto">
+            <h3 class="font-italic">Make this bee land:</h3>
+
+            {{#each bees}}
+
+            {{#unless landed}}
+
+            <h1> {{name}}</h1>
+            <button class="devour-burger" data-id="{{id}}">
+                FLYING TIME!
+            </button>
+
+            {{/unless}}
+            {{/each}}
+
+
+        </div>
+
+        <div class="col-smm-6 mx-auto">
+            <h3 class="font-italic">Bees landed:</h3>
+
+            {{#each bees}}
+            {{#if landed}}
+            <h1> {{name}}</h1>
+
+            {{/if}}
+            {{/each}}
+
+        </div>
+
+
+        <div class="col-sm-12 text-center">
+            <h3 class="py-2 text-white">Add a bee!</h3>
+
+            <form class="create-form">
+                <div class="form-group">
+                    <input type="text" class="btn-lg text-center" id="name" name="name" placeholder="Insert Bee Name">
+
+
+                    <input type="hidden" id="landed" value="0">
+                </div>
+                <button class="btn btn-warning text-white p-3" type="submit">Add a bee</button>
+            </form>
+        </div>
+
+    </div>
+</div>
