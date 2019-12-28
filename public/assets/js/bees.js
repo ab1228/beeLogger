@@ -3,5 +3,20 @@ $(function () {
         var id = $(this).data('id');
         var newFlying = $(this).data('newlanding');
 
+        var newFlyingState = {
+            flying: newFlying
+        };
+
+        $.ajax('/api/bees/' + id, {
+            type: 'PUT',
+            data: newFlyingState
+        }).then(
+            function () {
+                console.log('changed flying to', newFlying);
+
+                location.reload();
+            }
+        )
+
     })
 })
