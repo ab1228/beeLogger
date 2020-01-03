@@ -7,18 +7,20 @@ var bee = {
         });
     },
 
-    create: function (cols, vals, cb) {
-        orm.create('bees', cols, vals, function (res) {
-            cb(res);
-        });
-    },
 
-    update: function (condition, cb) {
-        orm.update("bees", condition, function (res) {
-            cb(res);
-        });
+
+    update: function (id, cb) {
+        var condition = 'id=' + id;
+        orm.update('bees', {
+            landed: true
+        }, condition, cb);
+
     }
+
+
 };
 
+
+
+
 module.exports = bee;
-// { landed: true }
