@@ -20,5 +20,13 @@ $(function () {
     });
 
 
+    $('.create-form').on('submit', function (event) {
+
+        event.preventDefault();
+        var newBee = {
+            name: $("#name").val().trim(),
+            landed: 
+        };
+    })
 
 });

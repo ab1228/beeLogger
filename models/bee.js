@@ -15,6 +15,13 @@ var bee = {
             landed: true
         }, condition, cb);
 
+    },
+
+    create: function () {
+        orm.create('bees', cols, vals, function (res) {
+            cb(res);
+        });
+
     }
 
 
