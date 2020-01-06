@@ -25,8 +25,18 @@ $(function () {
         event.preventDefault();
         var newBee = {
             name: $("#name").val().trim(),
-            landed: 
+            landed: $("#landed")
         };
+
+
+        $.ajax('/api/burgers', {
+            type: 'POST',
+            data: newBee
+        }).then(function () {
+            console.log('created new bee')
+            // Reload the page to get the updated list
+            location.reload();
+        });
     })
 
 });

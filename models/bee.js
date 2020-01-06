@@ -17,12 +17,15 @@ var bee = {
 
     },
 
-    create: function () {
-        orm.create('bees', cols, vals, function (res) {
-            cb(res);
-        });
+    create: function (name, cb) {
+        orm.create('bees', ['name', 'landed'],
+            [
+                name, false
+            ],
+            cb
+        );
 
-    }
+    },
 
 
 };

@@ -16,16 +16,27 @@ router.get('/', function (req, res) {
 });
 
 /// post route
+// router.post("/api/bees", function (req, res) {
+//     bee.create([
+//         "name", "landed"
+//     ], [
+//         req.body.name, req.body.landed
+//     ], function (result) {
+//         // Send back the ID of the new quote
+//         res.json({ id: result.insertId });
+//     });
+// });
+
+
 router.post("/api/bees", function (req, res) {
-    bee.create([
-        "name", "landed"
-    ], [
-        req.body.name, req.body.landed
-    ], function (result) {
-        // Send back the ID of the new quote
-        res.json({ id: result.insertId });
+    // takes the request object using it as input for burger.addBurger
+    bee.create(req.body.name, function (result) {
+        // wrapper for orm.js that using MySQL insert callback will return a log to console,
+        // render back to index with handle
+        console.log(result);
+        res.redirect("/");
     });
-});
+})
 
 /// put route
 router.put("/api/bees/:id", function (req, res) {
