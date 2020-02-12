@@ -15,17 +15,7 @@ router.get('/', function (req, res) {
     });
 });
 
-/// post route
-// router.post("/api/bees", function (req, res) {
-//     bee.create([
-//         "name", "landed"
-//     ], [
-//         req.body.name, req.body.landed
-//     ], function (result) {
-//         // Send back the ID of the new quote
-//         res.json({ id: result.insertId });
-//     });
-// });
+
 
 
 router.post("/api/bees", function (req, res) {
