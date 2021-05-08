@@ -23,6 +23,6 @@
     "mysql": "^2.17.1"
   },
   "devDependencies": {
-    "handlebars": "^4.5.0"
+    "handlebars": "^4.7.7"
   }
 }
